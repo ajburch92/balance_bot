@@ -1,0 +1,18 @@
+<launch>
+    <node name="controller" pkg="pid" type="controller"  output="screen" >
+      <param name="Kp" value="600.0" />
+      <param name="Ki" value="1.5" />
+      <param name="Kd" value="0.48" />
+      <param name="upper_limit" value="1000" />
+      <param name="lower_limit" value="-1000" />
+      <param name="windup_limit" value="1000" />
+      <param name="cutoff_frequency" value="30" />
+      <param name="max_loop_frequency" value="102.0" />
+      <param name="min_loop_frequency" value="98.0" />
+     </node>
+
+  
+    <node name="balance_setpoint_node" pkg="balance_bot_for_pidpkg" type="balance_setpoint_node" output="screen" >
+    </node>
+
+</launch>
