@@ -1,0 +1,28 @@
+#!/bin/bash
+echo "Deploying ZJ Device Tree Overlay, superuser privilege needed ..."
+echo "   "
+
+echo "Step 1 -> Exporting enviroment variables SLOTS & PINS ..."
+export SLOTS=/sys/devices/platform/bone_capemgr/slots
+export PINS=/sys/kernel/debug/pinctrl/44e10800.pinmux/pins
+echo "   "
+
+echo "Step 2 -> Compiling Overlay from .dts to .dtbo to /lib/firmware ..."
+dtc -O dtb -o /lib/firmware/zj-cape-00A0.dtbo -b 0 -@ zj_cape.dts
+echo "   "
+
+echo "Step 3 -> Viewing SLOTS & PINS status before making change ..."
+cat $SLOTS
+cat $PINS | grep '838\|83c\|830\|834\|8d8\|8dc\|8d0\|8d4\|820\|824\|848\|84c'
+echo "   "
+
+echo "Step 4 -> Deploying zj-cape to the SLOTS ..."
+(cd /lib/firmware ; echo zj-cape > $SLOTS)
+echo "   "
+
+echo "Step 5 -> Viewing SLOTS & PINS status after making change ..."
+cat $SLOTS
+cat $PINS | grep '838\|83c\|830\|834\|8d8\|8dc\|8d0\|8d4\|820\|824\|848\|84c'
+echo "   "
+
+echo "Cape deployment done!"
