@@ -1,4 +1,4 @@
-##Balance Bot Beaglebone Black
+## [Balance Bot Beaglebone Black]
 
 This repository contains the supporting files for Austin Burch and Zongyao Jin's Texas A&M University MEEN 652 Multivariable Control System Design Project. This repo includes:
 - a standalone balance bot program
@@ -9,7 +9,7 @@ This repository contains the supporting files for Austin Burch and Zongyao Jin's
 
 ## [ROS Package: `balance_bot_for_pidpkg`](./balance_bot_for_pidpkg)
 
-
+This package was build for use with the ros pid open source package. This package give the beaglebone black the capabilties to tune any balancing bot online with a remote interface. Two launch files include, one for the beaglebone, and one for the remote computer (must both be on the same ROS network).
 
 ## [Standalone Program: `balance_bot_program`](./balance_bot_program)
 
