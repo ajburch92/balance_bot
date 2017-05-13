@@ -1,4 +1,4 @@
-## [Balance Bot Beaglebone Black]
+## Balance Bot Beaglebone Black
 
 This repository contains the supporting files for Austin Burch and Zongyao Jin's Texas A&M University MEEN 652 Multivariable Control System Design Project. This repo includes:
 - a standalone balance bot program
@@ -59,7 +59,7 @@ which does the interface with L298N motor driver, it is able to activate a motor
 
 ---------------------
 
-workedController.cpp
+[`workedController.cpp`](balance_bot_program/workedController.cpp)
 
 which is the main control loop that balances a cart-pole robot. Explanation of this code is in the code itself.
 
