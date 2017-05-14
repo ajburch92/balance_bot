@@ -11,6 +11,9 @@ This repository contains the supporting files for Austin Burch and Zongyao Jin's
 
 This package was build for use with the ros pid open source package. This package gives the beaglebone black the capabilties to tune and visualize any balancing bot online with a remote interface using rqt. 
 
+- [`launch files`](/balance_bot_for_pidpkg/launch) - the balance_bot.launch file will launch all the required nodes on the beaglebone black except the driving node. Currently, this node needs to be launched seperatedly, and is named balance_bot_node_for_pidpkg. You can preconfigure the controller settings within this file. The balance_bot_QT.launch file starts the nodes required for rqt visualizations and pid dynamic reconfiguring.
+- [`src`](/balance_bot_for_pidpkg/src) - The src folder contains all the cpp files required to launch the nodes described above. 
+
 ## [Standalone Program: `balance_bot_program`](./balance_bot_program)
 
 Most of the code is revised based on Derek Molloy's libraries avaliable at Exploring BeagleBone Black website
